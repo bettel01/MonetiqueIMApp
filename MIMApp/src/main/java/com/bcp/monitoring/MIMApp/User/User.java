@@ -1,7 +1,8 @@
+
 package com.bcp.monitoring.MIMApp.User;
 
 
-import ch.qos.logback.core.subst.Token;
+
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -18,25 +19,27 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 
-@Table(name="user")
+@Table(name = "usertable")
 
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
 
     private Integer id;
     private String firstname;
     private String lastname;
+    @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Role role;
 
-    @OneToMany(mappedBy = "user")
-    private List<Token> tokens;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -55,9 +58,7 @@ public class User implements UserDetails {
 
 
 
-    public Role getRole() {
-        return role;
-    }
+
 
     @Override
     public boolean isAccountNonExpired() {

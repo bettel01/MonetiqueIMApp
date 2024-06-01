@@ -14,3 +14,5 @@ public class DemoController {
         return ResponseEntity.ok("hello from secured endpoint");
     }
 }
+
+
