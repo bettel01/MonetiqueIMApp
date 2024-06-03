@@ -1,11 +1,11 @@
 package mapper;
 
 import dto.utilisateurDTO;
-import entity.utilisateur;
+import entity.Utilisateur;
 
 public class utilisateurMapper {
 	
-	public static utilisateurDTO mapToUtilisateurDTO(utilisateur user) {
+/**	public static utilisateurDTO mapToUtilisateurDTO(Utilisateur user) {
 		return new utilisateurDTO(
 				user.getIdUser(),
 				user.getNom(),
@@ -13,8 +13,18 @@ public class utilisateurMapper {
 				user.getRole(),
 				user.getEmail(),
 				user.getTel()
-				
-		);
+				);
 	}
 
+	public static Utilisateur mapToUtilisateur(utilisateurDTO userDTO) {
+		return new Utilisateur(
+				userDTO.getIdUser(),
+				userDTO.getNom(),
+				userDTO.getPrenom(),
+				userDTO.getRole(),
+				userDTO.getEmail(),
+				userDTO.getTel()
+				);
+				
+	}**/
 }

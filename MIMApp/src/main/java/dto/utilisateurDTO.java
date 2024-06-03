@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class utilisateurDTO {
 	
 	
+
 	private Integer idUser;
 	private String nom;
 	private String prenom;
@@ -58,7 +59,8 @@ public class utilisateurDTO {
 	}
 
 
+	
+	
+	
+	
 }
-
-
-
