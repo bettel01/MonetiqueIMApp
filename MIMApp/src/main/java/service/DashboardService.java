@@ -43,20 +43,25 @@ public class DashboardService {
         return new DashboardDTO(lancers);
     }
 
-    public List<InstanceInterfaceDTO> getInstanceInterfacesByTraitementId(Integer traitementId) {
-       
-        List<InstanceTraitement> instanceTraitements = instanceTraitementRepository.findByTraitement_IdTraitement(traitementId);
+    public List<InstanceInterfaceDTO> getInstanceInterfacesByInstanceTraitementId(Integer instanceTraitementId) {
+        System.out.println("Fetching instance interfaces for instance traitement ID: " + instanceTraitementId);
 
-        List<InstanceInterfaceDTO> instanceInterfaceDTOs = new ArrayList<>();
+        List<InstanceInterface> instanceInterfaces = instanceInterfaceRepository.findByInstanceTraitement_IdInstanceTraitement(instanceTraitementId);
 
-        for (InstanceTraitement instanceTraitement : instanceTraitements) {
-            List<InstanceInterface> instanceInterfaces = instanceInterfaceRepository.findByInstanceTraitement_IdInstanceTraitement(instanceTraitement.getIdInstanceTraitement());
-
-            for (InstanceInterface instanceInterface : instanceInterfaces) {
-                instanceInterfaceDTOs.add(InstanceInterfaceMapper.toInstanceInterfaceDTO(instanceInterface));
-            }
-        }
+        List<InstanceInterfaceDTO> instanceInterfaceDTOs = instanceInterfaces.stream()
+                .map(InstanceInterfaceMapper::toInstanceInterfaceDTO)
+                .collect(Collectors.toList());
 
         return instanceInterfaceDTOs;
     }
+
+    public List<InstanceInterfaceDTO> getAllInstanceInterfaces() {
+        List<InstanceInterface> instanceInterfaces = instanceInterfaceRepository.findAll();
+
+        return instanceInterfaces.stream()
+                .map(InstanceInterfaceMapper::toInstanceInterfaceDTO)
+                .collect(Collectors.toList());
+    }
+
+
 }

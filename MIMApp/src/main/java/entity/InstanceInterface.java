@@ -2,6 +2,8 @@ package entity;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "instance_interface")
 public class InstanceInterface {
@@ -13,7 +15,7 @@ public class InstanceInterface {
 
     @ManyToOne
     @JoinColumn(name = "id_interface")
-    private InterfaceT interfaceEntity;
+    private InterfaceT interfaceName;
 
     @ManyToOne
     @JoinColumn(name = "id_instance_traitement")
@@ -21,6 +23,12 @@ public class InstanceInterface {
 
     @Column(name = "ordre_lancement")
     private Integer ordreLancement;
+
+    @Column(name="date_debut_lancement")
+    private Date dateDebutLancement;
+
+    @Column(name="date_fin_lancement")
+    private Date dateFinLancement;
     
     @Column(name = "etat_lancement")
     private String etatLancement;
@@ -34,15 +42,6 @@ public class InstanceInterface {
     public void setIdInstanceInterface(Integer idInstanceInterface) {
         this.idInstanceInterface = idInstanceInterface;
     }
-
-    public InterfaceT getInterfaceEntity() {
-        return interfaceEntity;
-    }
-
-    public void setInterfaceEntity(InterfaceT interfaceEntity) {
-        this.interfaceEntity = interfaceEntity;
-    }
-
     public InstanceTraitement getInstanceTraitement() {
         return instanceTraitement;
     }
@@ -51,6 +50,16 @@ public class InstanceInterface {
         this.instanceTraitement = instanceTraitement;
     }
 
+    public InterfaceT getInterfaceName() {
+        return interfaceName;
+    }
+
+    public void setInterfaceName(InterfaceT interfaceName) {
+        this.interfaceName = interfaceName;
+    }
+
+
+
     public Integer getOrdreLancement() {
         return ordreLancement;
     }
@@ -58,7 +67,23 @@ public class InstanceInterface {
     public void setOrdreLancement(Integer ordreLancement) {
         this.ordreLancement = ordreLancement;
     }
-    
+
+    public Date getDateDebutLancement() {
+        return dateDebutLancement;
+    }
+
+    public void setDateDebutLancement(Date dateDebutLancement) {
+        this.dateDebutLancement = dateDebutLancement;
+    }
+
+    public Date getDateFinLancement() {
+        return dateFinLancement;
+    }
+
+    public void setDateFinLancement(Date dateFinLancement) {
+        this.dateFinLancement = dateFinLancement;
+    }
+
     public String getEtatLancement() {
         return etatLancement;
     }

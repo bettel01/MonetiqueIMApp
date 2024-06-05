@@ -21,6 +21,8 @@ public class Traitement {
     @Column(name = "sens_flux")
     private String sensFlux;
 
+    @Column(name="mode_lancement")
+    private String modeLancement;
 
     public Integer getIdTraitement() {
         return idTraitement;
@@ -44,5 +46,13 @@ public class Traitement {
 
     public void setSensFlux(String sensFlux) {
         this.sensFlux = sensFlux;
+    }
+
+    public String getModeLancement() {
+        return modeLancement;
+    }
+
+    public void setModeLancement(String modeLancement) {
+        this.modeLancement = modeLancement;
     }
 }

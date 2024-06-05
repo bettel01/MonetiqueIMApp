@@ -7,11 +7,12 @@ public class InstanceInterfaceMapper {
 
     public static InstanceInterfaceDTO toInstanceInterfaceDTO(InstanceInterface instanceInterface) {
         return new InstanceInterfaceDTO(
-            instanceInterface.getIdInstanceInterface(),
-            instanceInterface.getEtatLancement(),
-            instanceInterface.getOrdreLancement(), 
-            instanceInterface.getInterfaceEntity(),
-            instanceInterface.getInstanceTraitement()
+                instanceInterface.getInstanceTraitement().getIdInstanceTraitement(),
+                instanceInterface.getInterfaceName().getNomInterface(),
+                instanceInterface.getOrdreLancement(),
+                instanceInterface.getDateDebutLancement(),
+                instanceInterface.getDateFinLancement(),
+                instanceInterface.getEtatLancement()
         );
     }
 }

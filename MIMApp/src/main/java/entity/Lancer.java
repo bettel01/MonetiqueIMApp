@@ -22,10 +22,12 @@ public class Lancer {
     private Integer instanceTraitementId;
 
     @ManyToOne
+    @MapsId("userId")
     @JoinColumn(name = "id_user", insertable = false, updatable = false)
     private Utilisateur utilisateur;
 
     @ManyToOne
+    @MapsId("instanceTraitementId")
     @JoinColumn(name = "id_instance_traitement", insertable = false, updatable = false)
     private InstanceTraitement instanceTraitement;
 
@@ -34,9 +36,6 @@ public class Lancer {
 
     @Column(name = "date_fin_lancement")
     private Date dateFinLancement;
-
-    @Column(name = "mode_lancement")
-    private String modeLancement;
 
     @Column(name = "etat_lancement")
     private String etatLancement;
@@ -91,13 +90,6 @@ public class Lancer {
         this.dateFinLancement = dateFinLancement;
     }
 
-    public String getModeLancement() {
-        return modeLancement;
-    }
-
-    public void setModeLancement(String modeLancement) {
-        this.modeLancement = modeLancement;
-    }
 
     public String getEtatLancement() {
         return etatLancement;
@@ -105,5 +97,22 @@ public class Lancer {
 
     public void setEtatLancement(String etatLancement) {
         this.etatLancement = etatLancement;
+    }
+    public void setNomTraitement(String nomTraitement) {
+        if (this.instanceTraitement != null) {
+            this.instanceTraitement.getTraitement().setNomTraitement(nomTraitement);
+        }
+    }
+
+    public void setSensFlux(String sensFlux) {
+        if (this.instanceTraitement != null) {
+            this.instanceTraitement.getTraitement().setSensFlux(sensFlux);
+        }
+    }
+
+    public void setModeLancement(String modeLancement) {
+        if (this.instanceTraitement != null) {
+            this.instanceTraitement.getTraitement().setModeLancement(modeLancement);
+        }
     }
 }

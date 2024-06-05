@@ -1,40 +1,41 @@
 package dto;
 
-import entity.InstanceTraitement;
-import entity.InterfaceT;
+import java.util.Date;
 
 public class InstanceInterfaceDTO {
 
-    private Integer idInstanceInterface;
-    private String etat;
+    private Integer instanceTraitementId;
+    private String interfaceName;
     private Integer ordre;
-    private InterfaceT interfaceEntity;
-    private InstanceTraitement instanceTraitement;
+    private Date dateDebutLancement;
+    private Date dateFinLancement;
+    private String etat;
 
-
-    public InstanceInterfaceDTO(Integer idInstanceInterface, String etat, Integer ordre, InterfaceT interfaceEntity, InstanceTraitement instanceTraitement) {
-        this.idInstanceInterface = idInstanceInterface;
-        this.etat = etat;
+    public InstanceInterfaceDTO(Integer instanceTraitementId, String interfaceName, Integer ordre, Date dateDebutLancement, Date dateFinLancement, String etat) {
+        this.instanceTraitementId = instanceTraitementId;
+        this.interfaceName = interfaceName;
         this.ordre = ordre;
-        this.interfaceEntity = interfaceEntity;
-        this.instanceTraitement = instanceTraitement;
-    }
-
-    // Getters et Setters
-    public Integer getIdInstanceInterface() {
-        return idInstanceInterface;
-    }
-
-    public void setIdInstanceInterface(Integer idInstanceInterface) {
-        this.idInstanceInterface = idInstanceInterface;
-    }
-
-    public String getEtat() {
-        return etat;
-    }
-
-    public void setEtat(String etat) {
+        this.dateDebutLancement = dateDebutLancement;
+        this.dateFinLancement = dateFinLancement;
         this.etat = etat;
+    }
+
+    // Getters and Setters
+
+    public Integer getInstanceTraitementId() {
+        return instanceTraitementId;
+    }
+
+    public void setInstanceTraitementId(Integer instanceTraitementId) {
+        this.instanceTraitementId = instanceTraitementId;
+    }
+
+    public String getInterfaceName() {
+        return interfaceName;
+    }
+
+    public void setInterfaceName(String interfaceName) {
+        this.interfaceName = interfaceName;
     }
 
     public Integer getOrdre() {
@@ -45,19 +46,28 @@ public class InstanceInterfaceDTO {
         this.ordre = ordre;
     }
 
-    public InterfaceT getInterfaceEntity() {
-        return interfaceEntity;
+
+    public Date getDateDebutLancement() {
+        return dateDebutLancement;
     }
 
-    public void setInterfaceEntity(InterfaceT interfaceEntity) {
-        this.interfaceEntity = interfaceEntity;
+    public void setDateDebutLancement(Date dateDebutLancement) {
+        this.dateDebutLancement = dateDebutLancement;
     }
 
-    public InstanceTraitement getInstanceTraitement() {
-        return instanceTraitement;
+    public Date getDateFinLancement() {
+        return dateFinLancement;
     }
 
-    public void setInstanceTraitement(InstanceTraitement instanceTraitement) {
-        this.instanceTraitement = instanceTraitement;
+    public void setDateFinLancement(Date dateFinLancement) {
+        this.dateFinLancement = dateFinLancement;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 }
