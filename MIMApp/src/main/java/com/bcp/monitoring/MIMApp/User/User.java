@@ -4,6 +4,8 @@ package com.bcp.monitoring.MIMApp.User;
 
 
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -42,12 +44,24 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private Role role;
 
+    @JsonSerialize(contentAs = SimpleGrantedAuthorityImpl.class)
+    @JsonDeserialize(contentAs = SimpleGrantedAuthorityImpl.class)
+    private List<GrantedAuthority> authorities;
 
+    // Other fields, constructors, getters, and setters
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return authorities;
     }
+
+    public void setAuthorities(List<GrantedAuthority> authorities) {
+        this.authorities = authorities;
+    }
+
+
+
+
 
     @Override
     public String getPassword() {
