@@ -24,7 +24,7 @@ public class Lancer {
     @ManyToOne
     @MapsId("userId")
     @JoinColumn(name = "id_user", insertable = false, updatable = false)
-    private Utilisateur utilisateur;
+    private User utilisateur;
 
     @ManyToOne
     @MapsId("instanceTraitementId")

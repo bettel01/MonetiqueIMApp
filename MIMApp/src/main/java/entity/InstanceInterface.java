@@ -7,8 +7,8 @@ import java.util.Date;
 @Entity
 @Table(name = "instance_interface")
 public class InstanceInterface {
-	
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_instance_interface")
     private Integer idInstanceInterface;
@@ -29,11 +29,11 @@ public class InstanceInterface {
 
     @Column(name="date_fin_lancement")
     private Date dateFinLancement;
-    
+
     @Column(name = "etat_lancement")
     private String etatLancement;
 
-    
+
 
     public Integer getIdInstanceInterface() {
         return idInstanceInterface;

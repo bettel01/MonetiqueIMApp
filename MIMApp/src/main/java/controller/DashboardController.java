@@ -26,7 +26,7 @@ public class DashboardController {
     @GetMapping("/get-lancers")
     public DashboardDTO getDashboardData() {
 
-    	DashboardDTO dashboardDTO = dashboardService.getDashboardData();
+        DashboardDTO dashboardDTO = dashboardService.getDashboardData();
         return dashboardDTO;
     }
 

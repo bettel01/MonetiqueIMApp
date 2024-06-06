@@ -37,4 +37,5 @@ public class InterfaceDTO {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

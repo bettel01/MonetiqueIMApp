@@ -43,6 +43,7 @@ public class DashboardService {
         return new DashboardDTO(lancers);
     }
 
+
     public List<InstanceInterfaceDTO> getInstanceInterfacesByInstanceTraitementId(Integer instanceTraitementId) {
         System.out.println("Fetching instance interfaces for instance traitement ID: " + instanceTraitementId);
 
@@ -62,6 +63,7 @@ public class DashboardService {
                 .map(InstanceInterfaceMapper::toInstanceInterfaceDTO)
                 .collect(Collectors.toList());
     }
+
 
 
 }

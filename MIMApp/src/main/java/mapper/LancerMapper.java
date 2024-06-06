@@ -10,6 +10,7 @@ public class LancerMapper {
             return null;
         }
         LancerDTO lancerDTO = new LancerDTO(
+
                 lancer.getInstanceTraitementId(),
                 lancer.getInstanceTraitement().getTraitement().getNomTraitement(),
                 lancer.getInstanceTraitement().getTraitement().getSensFlux(),
@@ -18,6 +19,7 @@ public class LancerMapper {
                 lancer.getDateFinLancement(),
                 lancer.getEtatLancement()
     );
+
 
         return lancerDTO;
         

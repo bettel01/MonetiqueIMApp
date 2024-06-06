@@ -1,5 +1,6 @@
 package dto;
 
+
 import java.util.Date;
 
 public class InstanceInterfaceDTO {
@@ -38,6 +39,7 @@ public class InstanceInterfaceDTO {
         this.interfaceName = interfaceName;
     }
 
+
     public Integer getOrdre() {
         return ordre;
     }
@@ -69,5 +71,6 @@ public class InstanceInterfaceDTO {
 
     public void setEtat(String etat) {
         this.etat = etat;
+
     }
 }

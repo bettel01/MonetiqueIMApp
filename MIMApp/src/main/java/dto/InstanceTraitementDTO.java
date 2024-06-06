@@ -20,6 +20,7 @@ public class InstanceTraitementDTO {
     private TraitementDTO traitement;
     private List<InstanceInterfaceDTO> instanceInterfaces;
 
+
     public Integer getId() {
         return id;
     }
@@ -75,4 +76,5 @@ public class InstanceTraitementDTO {
     public void setInstanceInterfaces(List<InstanceInterfaceDTO> instanceInterfaces) {
         this.instanceInterfaces = instanceInterfaces;
     }
+
 }

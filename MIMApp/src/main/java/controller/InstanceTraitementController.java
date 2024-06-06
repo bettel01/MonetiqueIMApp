@@ -14,20 +14,20 @@ import java.util.List;
 @RestController
 @RequestMapping("/MIMApi/instance-traitements")
 public class InstanceTraitementController {
-	
+
 	@Autowired
-	    private InstanceTraitementService instanceTraitementService;
+	private InstanceTraitementService instanceTraitementService;
 
-	    @GetMapping
-	    public ResponseEntity<List<InstanceTraitement>> getAllInstanceTraitements() {
-	        List<InstanceTraitement> instanceTraitements = instanceTraitementService.getAllInstanceTraitements();
-	        return ResponseEntity.ok(instanceTraitements);
-	    }
+	@GetMapping
+	public ResponseEntity<List<InstanceTraitement>> getAllInstanceTraitements() {
+		List<InstanceTraitement> instanceTraitements = instanceTraitementService.getAllInstanceTraitements();
+		return ResponseEntity.ok(instanceTraitements);
+	}
 
-	    @GetMapping("/{id}")
-	    public ResponseEntity<InstanceTraitement> getInstanceTraitementById(@PathVariable Integer id) {
-	        InstanceTraitement instanceTraitement = instanceTraitementService.getInstanceTraitementById(id);
-	        return ResponseEntity.ok(instanceTraitement);
-	    }
+	@GetMapping("/{id}")
+	public ResponseEntity<InstanceTraitement> getInstanceTraitementById(@PathVariable Integer id) {
+		InstanceTraitement instanceTraitement = instanceTraitementService.getInstanceTraitementById(id);
+		return ResponseEntity.ok(instanceTraitement);
+	}
 
 }

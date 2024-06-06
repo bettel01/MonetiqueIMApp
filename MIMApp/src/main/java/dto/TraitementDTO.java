@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class TraitementDTO {
 
+
 	private Integer idTraitement;
     private String nomTraitement;
     private String sensFlux;
@@ -69,4 +70,5 @@ public class TraitementDTO {
         this.interfaceIds = interfaceIds;
     }
 }
+
 

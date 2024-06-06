@@ -1,5 +1,6 @@
 package repository;
 
+
 import entity.InterfaceT;
 import entity.Traitement;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,4 +11,5 @@ import java.util.List;
 @Repository
 public interface InterfaceRepository extends JpaRepository<InterfaceT, Integer> {
     List<InterfaceT> findByTraitement(Traitement traitement);
+
 }

@@ -4,19 +4,16 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+
+import entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.InstanceInterfaceRepository;
 import repository.InstanceTraitementRepository;
 import repository.LancerRepository;
-import repository.UtilisateurRepository;
+import repository.UserRepository;
 import repository.TraitementRepository;
-import entity.InstanceTraitement;
-import entity.Traitement;
-import entity.InterfaceT;
-import entity.InstanceInterface;
-import entity.Lancer;
-import entity.Utilisateur;
+import entity.User;
 
 @Service
 public class InstanceService {
@@ -34,7 +31,7 @@ public class InstanceService {
     private LancerRepository lancerRepository;
 
     @Autowired
-    private UtilisateurRepository utilisateurRepository; // Ajoutez ce repository
+    private UserRepository utilisateurRepository; // Ajoutez ce repository
 
 
 
@@ -78,7 +75,7 @@ public class InstanceService {
         InstanceTraitement instanceTraitement = instanceTraitementRepository.findById(instanceTraitementId)
                 .orElseThrow(() -> new RuntimeException("InstanceTraitement not found"));
 
-        Utilisateur utilisateur = utilisateurRepository.findById(1) // Assurez-vous de fournir un ID valide
+        User utilisateur = utilisateurRepository.findById(1) // Assurez-vous de fournir un ID valide
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
         Lancer lancer = new Lancer();

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "interface")
 public class InterfaceT {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_interface")
     private Integer idInterface;

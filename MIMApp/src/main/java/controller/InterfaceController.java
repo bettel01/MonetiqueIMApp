@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/MIMApi/interfaces")
 public class InterfaceController {
-	@Autowired
+    @Autowired
     private InterfaceService interfaceService;
 
     @GetMapping

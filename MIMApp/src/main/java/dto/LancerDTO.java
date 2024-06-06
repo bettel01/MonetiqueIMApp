@@ -5,17 +5,21 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LancerDTO {
 
+
    // private Integer userId;
 	private Integer instanceTraitementId;
+
     private String nomTraitement;
     private String sensFlux;
     private String modeLancement;
     private Date dateDebutLancement;
     private Date dateFinLancement;
     private String etatLancement;
+
 
 
 	public Integer getInstanceTraitementId() {
@@ -25,6 +29,7 @@ public class LancerDTO {
 	public void setInstanceTraitementId(Integer instanceTraitementId) {
 		this.instanceTraitementId = instanceTraitementId;
 	}
+
 
 	public String getNomTraitement() {
 		return nomTraitement;
@@ -98,9 +103,11 @@ public class LancerDTO {
 
 
 
+
 	public LancerDTO(Integer instanceTraitementId, String nomTraitement, String sensFlux, String modeLancement, Date dateDebutLancement, Date dateFinLancement, String etatLancement) {
         this.instanceTraitementId = instanceTraitementId;
 		this.nomTraitement = nomTraitement;
+
         this.sensFlux = sensFlux;
         this.modeLancement = modeLancement;
         this.dateDebutLancement = dateDebutLancement;
@@ -119,6 +126,7 @@ public class LancerDTO {
 				", etatLancement='" + etatLancement + '\'' +
 				'}';
 	}
+
 
 
 
