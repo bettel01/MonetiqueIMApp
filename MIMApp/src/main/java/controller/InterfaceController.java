@@ -12,7 +12,7 @@ import service.InterfaceService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/MIMApi/interfaces")
+@RequestMapping("/mimapi/interfaces")
 public class InterfaceController {
     @Autowired
     private InterfaceService interfaceService;

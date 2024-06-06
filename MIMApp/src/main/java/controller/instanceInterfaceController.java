@@ -12,7 +12,7 @@ import service.InstanceInterfaceService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/MIMApi/instance-interfaces")
+@RequestMapping("/mimapi/instance-interfaces")
 public class instanceInterfaceController {
 
     @Autowired
