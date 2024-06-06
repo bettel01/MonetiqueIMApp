@@ -25,6 +25,34 @@ public class TraitementService {
         return traitements.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
+
+    public TraitementDTO addTraitement(TraitementDTO traitementDTO) {
+        Traitement traitement = convertToEntity(traitementDTO);
+        Traitement savedTraitement = traitementRepository.save(traitement);
+        return convertToDto(savedTraitement);
+    }
+    public TraitementDTO updateTraitement(Integer id, TraitementDTO traitementDTO) {
+        Traitement existingTraitement = traitementRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Traitement not found with id: " + id));
+
+        existingTraitement.setNomTraitement(traitementDTO.getNomTraitement());
+        existingTraitement.setSensFlux(traitementDTO.getSensFlux());
+        existingTraitement.setModeLancement(traitementDTO.getModeLancement());
+
+        Traitement updatedTraitement = traitementRepository.save(existingTraitement);
+        return convertToDto(updatedTraitement);
+    }
+
+
+    private Traitement convertToEntity(TraitementDTO traitementDTO) {
+        Traitement traitement = new Traitement();
+        traitement.setNomTraitement(traitementDTO.getNomTraitement());
+        traitement.setSensFlux(traitementDTO.getSensFlux());
+        traitement.setModeLancement(traitementDTO.getModeLancement());
+        // Autres attributs à initialiser si nécessaire
+        return traitement;
+    }
+
     private TraitementDTO convertToDto(Traitement traitement) {
         TraitementDTO traitementDTO = new TraitementDTO();
         traitementDTO.setIdTraitement(traitement.getIdTraitement());

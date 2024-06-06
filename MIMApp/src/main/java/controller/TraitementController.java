@@ -2,11 +2,9 @@ package controller;
 
 import dto.TraitementDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import service.TraitementService;
-
+import org.springframework.web.bind.annotation.PutMapping;
 import java.util.List;
 
 @RestController
@@ -20,4 +18,18 @@ public class TraitementController {
     public List<TraitementDTO> getAllTraitements() {
         return traitementService.getAllTraitementsWithInterfaces();
     }
+
+    @PostMapping
+    public TraitementDTO addTraitement(@RequestBody TraitementDTO traitementDTO) {
+        return traitementService.addTraitement(traitementDTO);
+    }
+
+
+
+    @PutMapping("/{id}")
+    public TraitementDTO updateTraitement(@PathVariable Integer id, @RequestBody TraitementDTO traitementDTO) {
+        return traitementService.updateTraitement(id, traitementDTO);
+    }
+
+
 }
