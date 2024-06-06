@@ -1,27 +1,51 @@
+// UserController.java
 package controller;
 
-import entity.Utilisateur;
-import service.UtilisateurService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import entity.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+import service.UserService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/MIMApi/utilisateurs")
+@RequestMapping("/api/v1/users")
+@RequiredArgsConstructor
 public class UtilisateurController {
 
-    private final UtilisateurService utilisateurService;
+    private final UserService userService;
 
-    @Autowired
-    public UtilisateurController(UtilisateurService utilisateurService) {
-        this.utilisateurService = utilisateurService;
+    @PostMapping
+
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        return ResponseEntity.ok(userService.createUser(user));
+    }
+
+    @GetMapping("/{id}")
+
+    public ResponseEntity<User> getUserById(@PathVariable Integer id) {
+        return ResponseEntity.ok(userService.getUserById(id));
     }
 
     @GetMapping
-    public List<Utilisateur> getAllUtilisateurs() {
-        return utilisateurService.getAllUtilisateurs();
+
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
+    }
+
+    @PutMapping("/{id}")
+
+    public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User user) {
+        return ResponseEntity.ok(userService.updateUser(id, user));
+    }
+
+    @DeleteMapping("/{id}")
+
+    public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
     }
 }

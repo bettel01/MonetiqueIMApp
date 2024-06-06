@@ -1,7 +1,7 @@
 
-package com.bcp.monitoring.MIMApp.User;
+package repository;
 
-import com.bcp.monitoring.MIMApp.User.User;
+import entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

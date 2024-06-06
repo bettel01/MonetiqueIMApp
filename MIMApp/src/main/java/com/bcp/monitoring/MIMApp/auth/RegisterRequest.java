@@ -1,6 +1,6 @@
 package com.bcp.monitoring.MIMApp.auth;
 
-import com.bcp.monitoring.MIMApp.User.Role;
+import entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

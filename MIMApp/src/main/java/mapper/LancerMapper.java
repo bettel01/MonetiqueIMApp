@@ -10,15 +10,17 @@ public class LancerMapper {
             return null;
         }
         LancerDTO lancerDTO = new LancerDTO(
-        lancer.getUserId(),
-        lancer.getInstanceTraitement().getTraitement().getNomTraitement(),
-        lancer.getInstanceTraitement().getTraitement().getSensFlux(),
-        lancer.getModeLancement(),
-        lancer.getDateDebutLancement(),
-        lancer.getDateFinLancement(),
-        lancer.getEtatLancement()
+
+                lancer.getInstanceTraitementId(),
+                lancer.getInstanceTraitement().getTraitement().getNomTraitement(),
+                lancer.getInstanceTraitement().getTraitement().getSensFlux(),
+                lancer.getInstanceTraitement().getTraitement().getModeLancement(),
+                lancer.getDateDebutLancement(),
+                lancer.getDateFinLancement(),
+                lancer.getEtatLancement()
     );
-        System.out.println( lancerDTO.getUserId());
+
+
         return lancerDTO;
         
         

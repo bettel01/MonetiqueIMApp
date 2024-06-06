@@ -1,4 +1,4 @@
-package com.bcp.monitoring.MIMApp.User;
+package entity;
 import org.springframework.security.core.GrantedAuthority;
 
 public enum Role implements GrantedAuthority {

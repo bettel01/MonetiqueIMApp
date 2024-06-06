@@ -1,4 +1,4 @@
-package com.bcp.monitoring.MIMApp.User;
+package com.bcp.monitoring.MIMApp.config;
 
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;

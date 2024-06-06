@@ -1,17 +1,18 @@
 package com.bcp.monitoring.MIMApp.auth;
 
 
-import com.bcp.monitoring.MIMApp.User.User;
-import com.bcp.monitoring.MIMApp.User.UserRepository;
+
 import com.bcp.monitoring.MIMApp.config.JwtService;
 
 
+import entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import repository.UserRepository;
 
 
 @Service
