@@ -1,4 +1,5 @@
 
+
 package com.bcp.monitoring.MIMApp.User;
 
 
@@ -27,13 +28,15 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
 
-    private Integer id;
+    private Integer idUser;
     private String firstname;
     private String lastname;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private String password;
+
+    private Integer tel;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

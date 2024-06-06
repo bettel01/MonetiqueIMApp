@@ -35,7 +35,8 @@ public class AuthenticationService {
                 .lastname(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-
+                .role(request.getRole())
+                .tel(request.getTel())
                 .build();
         repository.save(user);
 
@@ -56,3 +57,5 @@ public class AuthenticationService {
         return AuthenticationResponse.builder().token(jwtToken).build();
     }
 }
+
+

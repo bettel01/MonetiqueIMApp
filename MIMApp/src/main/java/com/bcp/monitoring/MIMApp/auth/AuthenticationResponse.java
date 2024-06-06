@@ -1,3 +1,4 @@
+
 package com.bcp.monitoring.MIMApp.auth;
 
 import lombok.AllArgsConstructor;
@@ -14,3 +15,5 @@ public class AuthenticationResponse {
 
     private String token;
 }
+
+
