@@ -12,7 +12,7 @@ import service.InstanceTraitementService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/MIMApi/instance-traitements")
+@RequestMapping("/mimapi/instance-traitements")
 public class InstanceTraitementController {
 
 	@Autowired
