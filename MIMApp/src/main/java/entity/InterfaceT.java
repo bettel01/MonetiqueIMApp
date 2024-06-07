@@ -14,6 +14,9 @@ public class InterfaceT {
     @Column(name = "nom_interface")
     private String nomInterface;
 
+    @Column( name = "ordre_lancement")
+    private Integer ordreLancement;
+
     @ManyToOne
     @JoinColumn(name = "id_traitement", nullable = false)
     private Traitement traitement;
@@ -34,6 +37,14 @@ public class InterfaceT {
 
     public void setNomInterface(String nomInterface) {
         this.nomInterface = nomInterface;
+    }
+
+    public Integer getOrdreLancement() {
+        return ordreLancement;
+    }
+
+    public void setOrdreLancement(Integer ordreLancement) {
+        this.ordreLancement = ordreLancement;
     }
 
     public Traitement getTraitement() {

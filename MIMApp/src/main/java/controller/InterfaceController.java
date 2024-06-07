@@ -1,21 +1,20 @@
 package controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import dto.InterfaceDTO;
 import entity.InterfaceT;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import service.InterfaceService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/mimapi/interfaces")
+@RequiredArgsConstructor
 public class InterfaceController {
-    @Autowired
-    private InterfaceService interfaceService;
+
+    private final InterfaceService interfaceService;
 
     @GetMapping
     public ResponseEntity<List<InterfaceT>> getAllInterfaces() {
@@ -29,4 +28,21 @@ public class InterfaceController {
         return ResponseEntity.ok(iface);
     }
 
+    @PostMapping
+    public ResponseEntity<InterfaceT> createInterface(@RequestBody InterfaceDTO interfaceDTO) {
+        InterfaceT createdInterface = interfaceService.createInterface(interfaceDTO);
+        return ResponseEntity.ok(createdInterface);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<InterfaceT> updateInterface(@PathVariable Integer id, @RequestBody InterfaceDTO interfaceDTO) {
+        InterfaceT updatedInterface = interfaceService.updateInterface(id, interfaceDTO);
+        return ResponseEntity.ok(updatedInterface);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteInterface(@PathVariable Integer id) {
+        interfaceService.deleteInterface(id);
+        return ResponseEntity.noContent().build();
+    }
 }
