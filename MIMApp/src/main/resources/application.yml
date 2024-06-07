@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mim2
+    url: jdbc:mysql://localhost:3306/pfe_bcp1
     username: root
     password: Jihane@13042001@
     driver-class-name: com.mysql.cj.jdbc.Driver
