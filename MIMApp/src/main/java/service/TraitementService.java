@@ -25,12 +25,12 @@ public class TraitementService {
         return traitements.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
-
     public TraitementDTO addTraitement(TraitementDTO traitementDTO) {
         Traitement traitement = convertToEntity(traitementDTO);
         Traitement savedTraitement = traitementRepository.save(traitement);
         return convertToDto(savedTraitement);
     }
+
     public TraitementDTO updateTraitement(Integer id, TraitementDTO traitementDTO) {
         Traitement existingTraitement = traitementRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Traitement not found with id: " + id));
@@ -43,6 +43,11 @@ public class TraitementService {
         return convertToDto(updatedTraitement);
     }
 
+    public void deleteTraitement(Integer id) {
+        Traitement traitement = traitementRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Traitement not found with id: " + id));
+        traitementRepository.delete(traitement);
+    }
 
     private Traitement convertToEntity(TraitementDTO traitementDTO) {
         Traitement traitement = new Traitement();

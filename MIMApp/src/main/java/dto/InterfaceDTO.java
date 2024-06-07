@@ -1,5 +1,6 @@
 package dto;
 
+import entity.Traitement;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,8 @@ import lombok.Setter;
 public class InterfaceDTO {
     private Integer id;
     private String nomInterface;
-    private String description;
+    private Integer ordreLancement;
+    private Integer traitementId;
 
     public Integer getId() {
         return id;
@@ -30,12 +32,19 @@ public class InterfaceDTO {
         this.nomInterface = nomInterface;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getOrdreLancement() {
+        return ordreLancement;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOrdreLancement(Integer ordreLancement) {
+        this.ordreLancement = ordreLancement;
     }
 
+    public Integer getTraitementId() {
+        return traitementId;
+    }
+
+    public void setTraitementId(Integer traitementId) {
+        this.traitementId = traitementId;
+    }
 }

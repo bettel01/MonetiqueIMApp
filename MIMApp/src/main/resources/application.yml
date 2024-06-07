@@ -14,6 +14,7 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
 
+
 application:
   security:
     jwt:
